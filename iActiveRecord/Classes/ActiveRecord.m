@@ -591,6 +591,11 @@ static NSString *registerHasManyThrough = @"_ar_registerHasManyThrough";
                                               ofRecord:self];
 }
 
++ (void)addUniqueOn:(NSString *)aField {
+    [[ARSchemaManager sharedInstance] addIndexOnColumn:aField
+                                              ofRecord:self];
+}
+
 #pragma mark - Configuration
 
 + (void)applyConfiguration:(ARConfigurationBlock)configBlock {

@@ -365,7 +365,7 @@
     if (!self.whereStatement) {
         self.whereStatement = [[NSMutableString alloc] initWithString:result];
     } else {
-        self.whereStatement = [NSMutableString stringWithFormat:@"%@AND %@", self.whereStatement, result];
+        self.whereStatement = [NSMutableString stringWithFormat:@"%@ AND %@", self.whereStatement, result];
     }
     return self;
 }

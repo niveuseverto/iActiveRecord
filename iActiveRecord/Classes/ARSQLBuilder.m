@@ -68,7 +68,7 @@
 
 + (const char *)sqlOnCreateIndex:(NSString *)aColumnName forRecord:(ActiveRecord *)aRecord {
     NSString *sqlString = [NSString stringWithFormat:
-                           @"CREATE UNIQUE INDEX IF NOT EXISTS index_%@ ON \"%@\" (\"%@\")",
+                           @"CREATE INDEX IF NOT EXISTS index_%@ ON \"%@\" (\"%@\")",
                            aColumnName,
                            [aRecord recordName],
                            aColumnName];

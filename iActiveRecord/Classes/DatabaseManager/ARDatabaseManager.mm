@@ -222,6 +222,7 @@ static NSArray *records = nil;
         sqlite3_stmt *statement;
         
         const char *sqlQuery = [aSqlRequest UTF8String];
+        NSLog(@"%@", aSqlRequest);
         
         if (sqlite3_prepare_v2(database, sqlQuery, -1, &statement, NULL) != SQLITE_OK) {
             NSLog( @"%s", sqlite3_errmsg(database) );
