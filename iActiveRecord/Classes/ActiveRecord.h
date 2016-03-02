@@ -42,6 +42,8 @@ typedef void (^ARConfigurationBlock) (ARConfiguration *config);
 - (void)addError:(ARError *)anError;
 
 + (instancetype)newRecord;
++ (instancetype)load:(NSNumber *)id;
+
 - (BOOL)save;
 - (BOOL)update;
 - (void)dropRecord;

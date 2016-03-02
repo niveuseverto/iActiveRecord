@@ -222,7 +222,7 @@ static NSArray *records = nil;
         sqlite3_stmt *statement;
         
         const char *sqlQuery = [aSqlRequest UTF8String];
-        NSLog(@"%@", aSqlRequest);
+//        NSLog(@"%@", aSqlRequest);
         
         if (sqlite3_prepare_v2(database, sqlQuery, -1, &statement, NULL) != SQLITE_OK) {
             NSLog( @"%s", sqlite3_errmsg(database) );
@@ -454,7 +454,7 @@ static NSArray *records = nil;
                                             &nColumns,
                                             NULL) )
         {
-            NSLog(@"%@", anSql);
+//            NSLog(@"%@", anSql);
             NSLog( @"Couldn't retrieve data from database: %s", sqlite3_errmsg(database) );
             return;
         }

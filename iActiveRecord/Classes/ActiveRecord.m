@@ -239,6 +239,14 @@ static NSString *registerHasManyThrough = @"_ar_registerHasManyThrough";
     return record;
 }
 
++ (instancetype)load:(NSNumber *)id {
+    ActiveRecord *record = [[[[self lazyFetcher] where:[NSString stringWithFormat:@" id = %@ ", id], nil] limit:1] fetchRecords].firstObject;
+    if (!record) {
+        record = [self newRecord];
+    }
+    return record;
+}
+
 #pragma mark - Fetchers
 
 + (NSArray *)allRecords {
