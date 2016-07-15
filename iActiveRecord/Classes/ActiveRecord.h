@@ -63,4 +63,6 @@ typedef void (^ARConfigurationBlock) (ARConfiguration *config);
 
 + (NSString *)recordName;
 
+- (BOOL)isNew;
+
 @end

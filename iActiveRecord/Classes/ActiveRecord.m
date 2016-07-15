@@ -199,6 +199,10 @@ static NSString *registerHasManyThrough = @"_ar_registerHasManyThrough";
     isNew = YES;
 }
 
+- (BOOL)isNew {
+    return isNew;
+}
+
 #pragma mark -
 
 - (void)resetChanges {
