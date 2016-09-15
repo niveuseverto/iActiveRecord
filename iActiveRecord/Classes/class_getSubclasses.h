@@ -11,7 +11,8 @@
 
 static NSArray *class_getSubclasses(Class parentClass) {
     int numClasses = objc_getClassList(NULL, 0);
-    Class classes[sizeof(Class) * numClasses];
+    NSLog(@"Trying to allocate %d bytes", sizeof(Class) * numClasses);
+    Class *classes = (__unsafe_unretained Class*)calloc(numClasses, sizeof(Class));
     numClasses = objc_getClassList(classes, numClasses);
     NSMutableArray *result = [NSMutableArray array];
     for (NSInteger i = 0; i < numClasses; i++) {
